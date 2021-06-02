@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+$main-background: hsl(233, 47%, 7%);
+$card-background: hsl(244, 38%, 16%);
+$accent-color: hsl(277, 64%, 61%);
+$main-heading: hsl(0, 0%, 100%);
+$main-paragraph: hsla(0, 0%, 100%, 0.75);
+$stat-heading: hsla(0, 0%, 100%, 0.6);
+$paragraph-size: 15px;
+$heading-size: 25px;
+$inside-margin: 30px 20px;
+$border-radius: 10px;
+
+* {
+  box-sizing: border-box;
+}
+
+$desktop: 1200px;
+$tab: 900px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (min-width: #{$tab}) {
+    @content;
+  }
+}
+
+body {
+  background-color: $main-background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+  background-color: $card-background;
+  padding-bottom: 30px;
+  border-radius: $border-radius;
+  margin: 50px 0px 50px 0px;
+
+  @include tab {
+    width: 60%;
+  }
+
+  @include desktop {
+    margin: 0px;
+    padding-bottom: 0px;
+    width: 1200px;
+    max-width: 1200px;
+    flex-direction: row;
+  }
+
+  p {
+    margin: 10px 50px 30px 50px;
+    color: $main-paragraph;
+    text-align: center;
+    line-height: 25px;
+    @include desktop {
+      text-align: left;
+      margin: 0;
+    }
+  }
+  span {
+    color: $accent-color;
+  }
+
+  h1 {
+    padding-top: 30px;
+    margin: $inside-margin;
+    color: $main-heading;
+
+    @include desktop {
+      font-size: 40px;
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  .main-img {
+    filter: invert(14%) sepia(20%) saturate(1200%) hue-rotate(225deg)
+      brightness(55%) contrast(100%);
+    width: 100%;
+    border-radius: $border-radius $border-radius 0 0;
+    content: url(./images/image-header-mobile.jpg);
+
+    @include desktop {
+      order: 2;
+      width: 50%;
+      content: url(./images/image-header-desktop.jpg);
+      border-radius: 0 $border-radius $border-radius 0;
+    }
+  }
+
+  .content {
+    @include desktop {
+      height: 100%;
+      padding: 50px 100px 50px 50px;
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  .stat-box {
+    margin: $inside-margin;
+
+    @include desktop {
+      width: 33%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: left;
+    }
+    h2 {
+      margin: 5px;
+      font-size: $paragraph-size;
+      text-transform: uppercase;
+      color: $stat-heading;
+    }
+    p {
+      margin: 5px;
+      font-size: $heading-size;
+      font-weight: 700;
+      color: $main-heading;
+    }
+  }
+}
+
+.attribution {
+  color: $main-heading;
+  font-family: "Inter", sans-serif;
+}
