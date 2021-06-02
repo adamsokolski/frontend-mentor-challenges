@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/screenshot.png)
+![Image](images\screeenshot.png)
 
 ### Links
 
