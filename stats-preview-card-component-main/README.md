@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Image](images\screeenshot.png)
+![Image](https://raw.githubusercontent.com/idKrazu/frontend-mentor-challenges/main/stats-preview-card-component-main/images/screeenshot.png)
 
 ### Links
 
