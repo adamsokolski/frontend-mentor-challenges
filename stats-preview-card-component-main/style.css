@@ -118,7 +118,7 @@ main .main-img {
 @media (min-width: 1200px) {
   main .content {
     height: 100%;
-    padding: 50px 100px 50px 50px;
+    padding: 50px 100px 50px 70px;
     width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
