@@ -110,6 +110,7 @@ const Icon = styled(Image)`
   margin-right: 6px;
 `;
 const AuthorContainer = styled.div`
+  width: 100%;
   font-weight: 300;
   display: flex;
   align-items: center;
