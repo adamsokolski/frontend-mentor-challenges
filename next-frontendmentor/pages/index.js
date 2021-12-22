@@ -63,7 +63,7 @@ export default function Home() {
           Websites made looking as close to the design as possible.
         </SubTitle>
         {paths.map((path) => (
-          <Link href={path.path}>
+          <Link href={path.path} key={path.path}>
             <a>{path.name}</a>
           </Link>
         ))}

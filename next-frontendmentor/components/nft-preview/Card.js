@@ -120,6 +120,13 @@ const AuthorContainer = styled.div`
   margin-top: 15px;
 `;
 
+const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+`;
+
 export default function Card({
   image,
   title,
@@ -145,31 +152,36 @@ export default function Card({
       <Title>{title}</Title>
       <Description>{description}</Description>
       <Price>
-        <Icon
-          src="/images/nft-preview/icon-ethereum.svg"
-          alt="ethereum logo"
-          width="11"
-          height="18"
-        />
+        <IconContainer>
+          <Icon
+            src="/images/nft-preview/icon-ethereum.svg"
+            alt="ethereum logo"
+            width="11"
+            height="18"
+          />
+        </IconContainer>
         {price.toString().substring(0, 5)} ETH
       </Price>
       <Time>
-        <Icon
-          src="/images/nft-preview/icon-clock.svg"
-          alt="clock icon"
-          width="17"
-          height="17"
-        />
-
+        <IconContainer>
+          <Icon
+            src="/images/nft-preview/icon-clock.svg"
+            alt="clock icon"
+            width="17"
+            height="17"
+          />
+        </IconContainer>
         {timeLeft}
       </Time>
       <AuthorContainer>
-        <Avatar
-          src={avatar}
-          alt={`avatar of ${creatorName}`}
-          width="17"
-          height="17"
-        />
+        <IconContainer>
+          <Avatar
+            src={avatar}
+            alt={`avatar of ${creatorName}`}
+            width="25"
+            height="25"
+          />
+        </IconContainer>
         Creation of <CreatorName>{creatorName}</CreatorName>
       </AuthorContainer>
     </Container>
