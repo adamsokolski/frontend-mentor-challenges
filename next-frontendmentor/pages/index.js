@@ -44,6 +44,42 @@ const SubTitle = styled.h2`
   opacity: 0.9;
 `;
 
+const Challange = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  width: 400px;
+  height: 300px;
+  img {
+    border-radius: 10px;
+    transition: 200ms ease-out;
+  }
+
+  &:hover {
+    img {
+      filter: brightness(70%);
+    }
+  }
+`;
+
+const LinkBox = styled.div`
+  position: absolute;
+  background-color: rgba(11, 11, 11, 0.5);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-radius: 0 0 10px 10px;
+  bottom: 0;
+`;
+
 export default function Home() {
   return (
     <>
@@ -63,9 +99,27 @@ export default function Home() {
           Websites made looking as close to the design as possible.
         </SubTitle>
         {paths.map((path) => (
-          <Link href={path.path} key={path.path}>
-            <a>{path.name}</a>
-          </Link>
+          <Challange key={path.path}>
+            <Link href={path.path}>
+              <a>
+                {" "}
+                <ImageContainer>
+                  <Image
+                    src={path.img}
+                    alt={path.name}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center center"
+                  />
+                </ImageContainer>
+              </a>
+            </Link>
+            <LinkBox>
+              <Link href={path.path}>
+                <a> {path.name}</a>
+              </Link>
+            </LinkBox>
+          </Challange>
         ))}
       </Container>
     </>
